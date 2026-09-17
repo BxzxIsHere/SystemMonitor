@@ -7,6 +7,7 @@ Win32 API. The result is a single 506 KB executable that runs anywhere on
 Windows 10 or 11 with nothing to install beside it.
 
 ![System Monitor](screenshot.png)
+![System Monitor](screenshot2.png)
 
 ---
 
@@ -86,4 +87,4 @@ the first attempt and why.
 ---
 
 Crafted by **bxzx**.
-"# SystemMonitor" 
+# SystemMonitor 

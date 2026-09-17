@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0f7b38a5-e321-4280-aacd-dc91d92eb940}</ProjectGuid>
+    <RootNamespace>SystemMonitor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <!-- Headers are included as "Libs/Window.h" from every folder, so the
+           project root is the only include path the sources need. -->
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;NOMINMAX;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!-- C4100: Win32 callbacks and delegate hooks legitimately ignore
+           parameters they are required to declare. -->
+      <DisableSpecificWarnings>4100;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <!-- Sources are UTF-8; without this MSVC reads them as the system code
+           page and turns every non-ASCII glyph into mojibake. -->
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d2d1.lib;dwrite.lib;dwmapi.lib;pdh.lib;iphlpapi.lib;psapi.lib;shell32.lib;user32.lib;gdi32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableDpiAwareness>PerMonitorHighDPI</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <!-- Statically linked so the build is a single self contained exe that
+           runs without the Visual C++ redistributable installed. -->
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Gui\Charts.cpp" />
+    <ClCompile Include="Gui\Dashboard.cpp" />
+    <ClCompile Include="Gui\Format.cpp" />
+    <ClCompile Include="Gui\ProcessIcons.cpp" />
+    <ClCompile Include="Gui\TextField.cpp" />
+    <ClCompile Include="Gui\Watermark.cpp" />
+    <ClCompile Include="Libs\Canvas.cpp" />
+    <ClCompile Include="Libs\Clipboard.cpp" />
+    <ClCompile Include="Libs\Platform.cpp" />
+    <ClCompile Include="Libs\Renderer.cpp" />
+    <ClCompile Include="Libs\Theme.cpp" />
+    <ClCompile Include="Libs\TrayIcon.cpp" />
+    <ClCompile Include="Libs\Window.cpp" />
+    <ClCompile Include="Logic\CpuProbe.cpp" />
+    <ClCompile Include="Logic\GpuProbe.cpp" />
+    <ClCompile Include="Logic\MemoryProbe.cpp" />
+    <ClCompile Include="Logic\NetworkProbe.cpp" />
+    <ClCompile Include="Logic\PdhQuery.cpp" />
+    <ClCompile Include="Logic\ProcessProbe.cpp" />
+    <ClCompile Include="Logic\Sampler.cpp" />
+    <ClCompile Include="Logic\StorageProbe.cpp" />
+    <ClCompile Include="Logic\SystemInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Gui\Charts.h" />
+    <ClInclude Include="Gui\Dashboard.h" />
+    <ClInclude Include="Gui\Easing.h" />
+    <ClInclude Include="Gui\Format.h" />
+    <ClInclude Include="Gui\ProcessIcons.h" />
+    <ClInclude Include="Gui\TextField.h" />
+    <ClInclude Include="Gui\Watermark.h" />
+    <ClInclude Include="Libs\Canvas.h" />
+    <ClInclude Include="Libs\Clipboard.h" />
+    <ClInclude Include="Libs\Com.h" />
+    <ClInclude Include="Libs\Platform.h" />
+    <ClInclude Include="Libs\Renderer.h" />
+    <ClInclude Include="Libs\Theme.h" />
+    <ClInclude Include="Libs\TrayIcon.h" />
+    <ClInclude Include="Libs\Types.h" />
+    <ClInclude Include="Libs\Window.h" />
+    <ClInclude Include="Logic\Metrics.h" />
+    <ClInclude Include="Logic\Probes.h" />
+    <ClInclude Include="Logic\Sampler.h" />
+    <ClInclude Include="Logic\SystemInfo.h" />
+    <ClInclude Include="Resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="App.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\App.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

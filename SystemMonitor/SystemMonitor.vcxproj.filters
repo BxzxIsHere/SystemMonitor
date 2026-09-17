@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{a1f0c2d1-4b7e-4c11-9a2f-0f1d2c3b4a51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{b2e1d3c2-5c8f-4d22-8b3a-1e2f3a4b5c62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{c3d2e4b3-6d9a-4e33-9c4b-2f3a4b5c6d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{d4c3f5a4-7eab-4f44-ad5c-3a4b5c6d7e84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Libs\Canvas.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\Platform.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\Renderer.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\TrayIcon.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\Theme.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\Window.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\CpuProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\GpuProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\MemoryProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\NetworkProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\PdhQuery.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\ProcessProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\Sampler.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\StorageProbe.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\SystemInfo.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Charts.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dashboard.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Format.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Watermark.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libs\Canvas.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Com.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Platform.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Renderer.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Theme.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\TrayIcon.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Types.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\Window.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\Metrics.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\Probes.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\Sampler.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\SystemInfo.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Charts.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Dashboard.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Easing.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Format.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Watermark.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="App.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\App.png">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>

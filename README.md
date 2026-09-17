@@ -6,8 +6,8 @@ No frameworks and no dependencies — just C++20, Direct3D 11, Direct2D and the
 Win32 API. The result is a single 506 KB executable that runs anywhere on
 Windows 10 or 11 with nothing to install beside it.
 
-![System Monitor](screenshot.png)
-![System Monitor](screenshot2.png)
+![System Monitor](Screenshot.png)
+![System Monitor](Screenshot2.png)
 
 ---
 

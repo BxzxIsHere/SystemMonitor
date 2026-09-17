@@ -1,0 +1,42 @@
+#include <windows.h>
+
+#include "Resource.h"
+
+// One icon serves the window, the taskbar, Alt+Tab, the shell and the tray.
+// It carries frames from 16 up to 256 so nothing ever has to be rescaled.
+IDI_APP ICON "App.ico"
+
+#ifdef _DEBUG
+#define VER_FLAGS VS_FF_DEBUG
+#else
+#define VER_FLAGS 0x0L
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS VER_FLAGS
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "bxzx"
+            VALUE "FileDescription",  "System Monitor"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "SystemMonitor"
+            VALUE "LegalCopyright",   "Copyright (c) 2026 bxzx"
+            VALUE "OriginalFilename", "SystemMonitor.exe"
+            VALUE "ProductName",      "System Monitor"
+            VALUE "ProductVersion",   "1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
